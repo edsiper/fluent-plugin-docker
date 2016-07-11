@@ -14,13 +14,17 @@
 #    limitations under the License.
 #
 
+require 'yajl'
 require 'fluent/filter'
 require 'fluent/plugin'
-require 'yajl'
 
 module Fluent
   class DockerFilter < Filter
     Plugin.register_filter('docker', self)
+
+    def initialize
+      super
+    end
 
     def configure(conf)
       super
@@ -33,8 +37,6 @@ module Fluent
           log_json = Yajl.load(log)
           record['log'] = log_json
         end
-      else
-        router.emit_error_event(tag, time, record, e)
       end
       record
     end
