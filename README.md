@@ -1,6 +1,6 @@
 # fluent-plugin-docker
 
-This _Gem_ is a [Fluentd](http://fluentd.org) plugin filter that helps to manager [Docker](http://www.docker.com) logs. When enabled, it main functionality is to check and convert quoted JSON _log_ messages into real JSON format, e.g:
+This _Gem_ is a [Fluentd](http://fluentd.org) plugin filter that helps to manage [Docker](http://www.docker.com) logs. When enabled, it main functionality is to check and convert quoted JSON _log_ messages into real JSON format, e.g:
 
 From
 
@@ -18,11 +18,15 @@ to
 
 ### Native gem
 
+```bash
 $ gem install fluent-plugin-docker
+```
 
 ### Fluentd gem
 
+```bash
 $ fluent-gem install fluent-plugin-docker
+```
 
 ## Usage
 
